@@ -67,12 +67,20 @@ class Tarta extends Dulces {
     }
 
     public function muestraComensalesPosibles () {
-        if ($this->minNumComensales == 2 && $this->maxNumComensales == 2) {
-            return 'Para dos comensales.';
+        if ($this->minNumComensales == $this->maxNumComensales && $this->minNumComensales > 0) {
+            if ($this->minNumComensales < 2) {
+                return 'Para '.$this->minNumComensales. ' comensal.';
+            } else {
+                return 'Para '.$this->minNumComensales. ' comensales.';
+            }
         } else if ($this->minNumComensales > 2 && $this->maxNumComensales > 2 && $this->minNumComensales == $this->maxNumComensales) {
             return 'Para '.$this->minNumComensales.' comensales.';
         } else if ($this->minNumComensales >= 2 && $this->maxNumComensales < 2) {
             return 'Para '.$this->minNumComensales.' comensales.';
+        } else if ($this->minNumComensales <= 0 && $this->maxNumComensales <= 0) {
+            return 'No se puede comer la tarta.';
+        } else if ($this->minNumComensales <= 0 && $this->maxNumComensales > 1) {
+            return 'De '.$this->minNumComensales. ' a '.$this->maxNumComensales.' comensales.';
         } else {
             return 'De '.$this->minNumComensales. ' a '.$this->maxNumComensales.' comensales.';
         }
