@@ -7,7 +7,7 @@ class Dulces {
 
     const IVA = 0.21;
 
-    public  function __construct($nombre, $numero, $precio)
+    public function __construct($nombre, $numero, $precio)
     {
         $this->nombre = $nombre;
         $this->numero = $numero;
