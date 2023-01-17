@@ -25,11 +25,8 @@ class Bollo extends Dulces {
     }
 
     public function muestraResumen() {
-        echo '<b>Resumen dulce:</b><br>---------------------<br>'.'<b>Nombre = </b>'.$this->nombre.
-        '<br><b>Número = </b>'.$this->numero.
-        '<br><b>Precio = </b>'.$this->getPrecio().' €'.
-        '<br><b>Precio con IVA = </b>'.$this->getPrecioConIVA().' €'.
-        '<br><b>Relleno = </b>'.$this->relleno;
+        parent::muestraResumen();
+        echo '<br><b>Relleno = </b>'.$this->relleno;
     }
 }
 

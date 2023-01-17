@@ -39,11 +39,8 @@ class Chocolate extends Dulces {
     }
 
     public function muestraResumen() {
-        echo '<b>Resumen dulce:</b><br>---------------------<br>'.'<b>Nombre = </b>'.$this->nombre.
-        '<br><b>Número = </b>'.$this->numero.
-        '<br><b>Precio = </b>'.$this->getPrecio().' €'.
-        '<br><b>Precio con IVA = </b>'.$this->getPrecioConIVA().' €'.
-        '<br><b>Porcentaje de cacao = </b>'.$this->porcentajeCacao.' %'.
+        parent::muestraResumen();
+        echo '<br><b>Porcentaje de cacao = </b>'.$this->porcentajeCacao.' %'.
         '<br><b>Peso = </b>'.$this->peso.' gramos';
     }
 }
