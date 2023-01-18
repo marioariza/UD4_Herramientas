@@ -101,7 +101,13 @@ class Pasteleria {
     }
 
     public function comprarClienteProducto($numeroCliente, $numeroProducto) {
-
+        if (is_null($this->getClientes()[$numeroCliente])){
+            echo "Este cliente no puede comprar ya que no existe.";
+        }elseif(is_null($this->getProductos()[$numeroProducto])){ 
+            echo "Este producto no se puede comprar ya que no existe.";
+        }else{ 
+            $this->getClientes()[$numeroCliente]->comprar($this->getProductos()[$numeroProducto]); 
+        }
     }
 
     public function muestraResumen()
