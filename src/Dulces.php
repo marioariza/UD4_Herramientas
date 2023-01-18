@@ -34,7 +34,7 @@ class Dulces {
     }
 
     public function muestraResumen() {
-        echo '<b>Resumen dulce:</b><br>********************<br>'.'<b>Nombre = </b>'.$this->nombre.
+        echo '<b>Resumen dulce:</b><br>********************<br><b>Nombre = </b>'.$this->nombre.
         '<br><b>Número = </b>'.$this->numero.
         '<br><b>Precio = </b>'.$this->precio.' €'.
         '<br><b>Precio con IVA = </b>'.$this->getPrecioConIVA().' €';

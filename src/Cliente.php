@@ -87,7 +87,7 @@ class Cliente {
     }
 
     public function muestraResumen() {
-        echo '<b>Resumen cliente:</b><br>********************<br>' . '<b>Nombre = </b>' . $this->nombre .
+        echo '<b>Resumen cliente:</b><br>********************<br><b>Nombre = </b>' . $this->nombre .
             '<br><b>Número = </b>' . $this->numero;
         foreach ($this->dulcesComprados as $dulc) {
             echo '<br><b>Dulce comprado = </b>'.$dulc->getNombre();

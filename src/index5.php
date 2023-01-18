@@ -7,13 +7,15 @@ include "Tarta.php";
 include "Bollo.php";
 include "Chocolate.php";
 
+$pasteleria = new Pasteleria("Confitería la Campana");
+
 $cliente1 = new Cliente("Mario", 7);
 $cliente2 = new Cliente("Javier", 12);
 $cliente3 = new Cliente("Manuel", 2);
 $cliente4 = new Cliente("Guillermo", 8);
 
 $tarta1 = new Tarta("Tarta tres chocolates", 34, 4, ["Chocolate negro, Chocolate con leche, Chocolate blanco"], 3, 1, 1);
-$tarta2 = new Tarta("Tarta de la abuela", 33, 4, ["Chocolate, Natilla, Galleta"], 3, 1, 1);
+$tarta2 = new Tarta("Tarta de la abuela", 33, 4, ["Chocolate, Natilla, Galleta"], 3, 1, 4);
 $bollo1 = new Bollo("Cuña de chocolate", 15, 1.5, "Crema");
 $bollo1 = new Bollo("Magdalena", 12, 1.2, "Chocolate blanco");
 $bollo1 = new Bollo("Croissant", 18, 1.3, "Chocolate");
@@ -21,10 +23,44 @@ $chocolate1 = new Chocolate("Palmera de chocolate", 3, 1.8, 70, 165);
 $chocolate2 = new Chocolate("Chocolate negro", 4, 2.3, 85, 100);
 $chocolate3 = new Chocolate("Kinder Schoko-Bons", 6, 3.5, 16.5, 46);
 
+
+
 echo "<h2>PRUEBA PASTELERÍA</h2>";
+// Incluimos dulces de prueba.
+$pasteleria->incluirTarta("Tarta tres chocolates", 34, 4, ["Chocolate negro, Chocolate con leche, Chocolate blanco"], 3, 1, 1);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirTarta("Tarta de la abuela", 33, 4, ["Chocolate, Natilla, Galleta"], 3, 1, 4);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirBollo("Cuña de chocolate", 15, 1.5, "Crema");
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirBollo("Magdalena", 12, 1.2, "Chocolate blanco");
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirBollo("Croissant", 18, 1.3, "Chocolate");
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirChocolate("Palmera de chocolate", 3, 1.8, 70, 165);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirChocolate("Chocolate negro", 4, 2.3, 85, 100);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirChocolate("Kinder Schoko-Bons", 6, 3.5, 16.5, 46);
+echo "<br><br>-----------------------------------------<br><br>";
+// Listamos los productos.
+$pasteleria->listarProductos();
+echo "<br><br>-----------------------------------------<br><br>";
+// Incluimos clientes de prueba.
+$pasteleria->incluirCliente("Mario", 7);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirCliente("Javier", 12);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirCliente("Manuel", 2);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirCliente("Guillermo", 8);
+
 
 
 echo "<br><br>";
+
+
+
 echo "<h2>PRUEBA CLIENTE</h2>";
 $cliente1->comprar($tarta1);
 echo "<br><br>-----------------------------------------<br><br>";
