@@ -54,7 +54,9 @@ echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirCliente("Manuel", 2);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirCliente("Guillermo", 8);
-
+echo "<br><br>-----------------------------------------<br><br>";
+// Listamos los clientes.
+$pasteleria->listarClientes();
 
 
 echo "<br><br>";

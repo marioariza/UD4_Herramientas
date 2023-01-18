@@ -96,7 +96,7 @@ class Pasteleria {
             echo"<br>No existen clientes en la pastelería ahora mismo.";
         } else {
             for ($i=0;$i<$this->numClientes;$i++){ 
-                echo "<br>"; 
+                echo "<br><br>"; 
                 $this->getClientes()[$i]->muestraResumen(); 
             } 
         }
