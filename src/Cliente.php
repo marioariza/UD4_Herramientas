@@ -70,7 +70,7 @@ class Cliente {
             <br><br>
             <b>Valoración: </b>" . $c;
         } else {
-            echo "No puedes realizar la valoración de un dulce que no ha sido comprado";
+            echo "No puedes realizar la valoración de un dulce que no ha sido comprado.";
         }
     }
 
