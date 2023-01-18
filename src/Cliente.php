@@ -1,8 +1,6 @@
 <?php
 
-include_once("Pasteleria.php");
-
-class Cliente extends Pasteleria{
+class Cliente {
     public string $nombre;
     private int $numero;
     private array $dulcesComprados = [];
@@ -52,18 +50,17 @@ class Cliente extends Pasteleria{
         return $this;
     }
 
-    public function comprar(Dulces $d) {
-        if ($this->listaDeDulces($d)) {
-            $this->numDulcesComprados++;
-            echo "Dulce comprado con éxito. (".$d->getNombre()."). Número de dulces comprados: ".$this->numDulcesComprados;
-            array_push($this->dulcesComprados, $d);
-        } else if ($this->listaDeDulces($d) == false ) {
-            echo "El dulce no se puede comprar ya que ha superado el máximo de dulces para un pedido. Número de dulces comprados: " . $this->numDulcesComprados;
-        } // } else if ($this->listaDeDulces($d) == false && $this->numDulcesComprados < 1) {
-        //     $this->numDulcesComprados++;
-        //     echo "Dulce comprado con éxito. (".$d->getNombre()."). Número de dulces comprados: ".$this->numDulcesComprados;
-        //     array_push($this->dulcesComprados, $d);
-        // }
+    public function comprar(Array $d) {
+
+        for ($i = 0; $i < count($d); $i++) {
+            if ($this->listaDeDulces($d[$i]) == false) {
+                $this->numDulcesComprados++;
+                echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados . "<br><br>";
+                array_push($this->dulcesComprados, $d[$i]);
+            } else if ($this->listaDeDulces($d[$i])) {
+                echo "El dulce no se puede comprar ya que ha superado el máximo de dulces para un pedido. Número de dulces comprados: " . $this->numDulcesComprados;
+            }
+        }
     }
 
     public function valorar(Dulces $d, string $c) {
@@ -76,8 +73,9 @@ class Cliente extends Pasteleria{
         }
     }
 
-    public function listaDeDulces(Dulces $d) : bool{
-        if (in_array($d, $this->getProductos())) {
+    public function listaDeDulces(Dulces $d) {
+        
+        if (in_array($d, $this->dulcesComprados)) {
             return true;
         } else {
             return false;

@@ -1,8 +1,6 @@
 <?php
 
-include_once("Pasteleria.php");
-
-class Dulces extends Pasteleria{
+class Dulces {
     public string $nombre;
     protected int $numero;
     private float $precio;

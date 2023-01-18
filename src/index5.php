@@ -64,11 +64,11 @@ echo "<br><br>";
 
 
 echo "<h2>PRUEBA CLIENTE</h2>";
-$cliente1->comprar($tarta1);
+$cliente1->comprar([$tarta1,$bollo1,$chocolate3]);
+echo "<br>-----------------------------------------<br><br>";
+// $cliente2->comprar($tarta1);
 echo "<br><br>-----------------------------------------<br><br>";
-$cliente2->comprar($tarta1);
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->comprar($bollo1);
+// $cliente1->comprar($bollo1);
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
 echo "<br><br>-----------------------------------------<br><br>";
