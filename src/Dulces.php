@@ -29,8 +29,9 @@ class Dulces {
         return $this->precio;
     }
 
-    public function getPrecioConIVA() {  
-        return number_format($this->precio + ($this->precio * self::IVA), 2); 
+    public function getPrecioConIVA() : float {  
+        $precio_IVA = number_format($this->precio + ($this->precio * self::IVA), 2);
+        return (float) $precio_IVA;
     }
 
     public function muestraResumen() {
