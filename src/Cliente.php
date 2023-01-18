@@ -53,17 +53,17 @@ class Cliente extends Pasteleria{
     }
 
     public function comprar(Dulces $d) {
-        if ($this->listaDeDulces($d) == true) {
+        if ($this->listaDeDulces($d)) {
             $this->numDulcesComprados++;
-            echo "Dulce comprado con éxito. Número de dulces comprados: ".$this->numDulcesComprados;
+            echo "Dulce comprado con éxito. (".$d->getNombre()."). Número de dulces comprados: ".$this->numDulcesComprados;
             array_push($this->dulcesComprados, $d);
-        } else if ($this->listaDeDulces($d) == false && $this->numDulcesComprados >= 1) {
-            echo "El dulce no se puede comprar ya que ha superado el máximo de dulces para un pedido. Número de dulces comprados: ".$this->numDulcesComprados;
-        } else if ($this->listaDeDulces($d) == false && $this->numDulcesComprados < 1) {
-            $this->numDulcesComprados++;
-            echo "Dulce comprado con éxito. Número de dulces comprados: ".$this->numDulcesComprados;
-            array_push($this->dulcesComprados, $d);
-        }
+        } else if ($this->listaDeDulces($d) == false ) {
+            echo "El dulce no se puede comprar ya que ha superado el máximo de dulces para un pedido. Número de dulces comprados: " . $this->numDulcesComprados;
+        } // } else if ($this->listaDeDulces($d) == false && $this->numDulcesComprados < 1) {
+        //     $this->numDulcesComprados++;
+        //     echo "Dulce comprado con éxito. (".$d->getNombre()."). Número de dulces comprados: ".$this->numDulcesComprados;
+        //     array_push($this->dulcesComprados, $d);
+        // }
     }
 
     public function valorar(Dulces $d, string $c) {

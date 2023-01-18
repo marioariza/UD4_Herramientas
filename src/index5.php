@@ -66,7 +66,7 @@ echo "<br><br>";
 echo "<h2>PRUEBA CLIENTE</h2>";
 $cliente1->comprar($tarta1);
 echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->comprar($tarta1);
+$cliente2->comprar($tarta1);
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->comprar($bollo1);
 echo "<br><br>-----------------------------------------<br><br>";
@@ -75,5 +75,10 @@ echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta2, "Tarta buena pero las hay mejores");
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->muestraResumen();
+
+
+echo "<br><br>-----------------------------------------<br><br>";
+// Listamos los clientes.
+$pasteleria->listarClientes();
 
 ?>
