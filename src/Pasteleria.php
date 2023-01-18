@@ -61,7 +61,7 @@ class Pasteleria {
 
     public function incluirBollo($nombre, $numero, $precio, $rellenos) {
         $bollo = new Bollo($nombre, $numero, $precio, $rellenos);
-        $this->incluirProducto($tarta);
+        $this->incluirProducto($bollo);
     }
 
     public function incluirChocolate($nombre, $numero, $precio, $porcentajeCacao, $peso) {
