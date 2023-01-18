@@ -1,6 +1,8 @@
 <?php
 
-class Cliente {
+include_once("Pasteleria.php");
+
+class Cliente extends Pasteleria{
     public string $nombre;
     private int $numero;
     private array $dulcesComprados = [];
@@ -75,7 +77,7 @@ class Cliente {
     }
 
     public function listaDeDulces(Dulces $d) : bool{
-        if (in_array($d, $this->dulcesComprados)) {
+        if (in_array($d, $this->getProductos())) {
             return true;
         } else {
             return false;
