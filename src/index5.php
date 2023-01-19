@@ -29,6 +29,8 @@ echo "<h2>PRUEBA PASTELERÍA</h2>";
 // Incluimos dulces de prueba.
 $pasteleria->incluirTarta("Tarta tres chocolates", 34, 4, ["Chocolate negro, Chocolate con leche, Chocolate blanco"], 3, 1, 1);
 echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirTarta("Tarta tres chocolates", 34, 4, ["Chocolate negro, Chocolate con leche, Chocolate blanco"], 3, 1, 1);
+echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirTarta("Tarta de la abuela", 33, 4, ["Chocolate, Natilla, Galleta"], 3, 1, 4);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirBollo("Cuña de chocolate", 15, 1.5, "Crema");
@@ -53,18 +55,20 @@ $pasteleria->incluirCliente("Javier", 12);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirCliente("Manuel", 2);
 echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->incluirCliente("Manuel", 2);
+echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->incluirCliente("Guillermo", 8);
 echo "<br><br>-----------------------------------------<br><br>";
 // Listamos los clientes.
 $pasteleria->listarClientes();
 echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(7, 12);
+// $pasteleria->comprarClienteProducto(7, 12);
 echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(8, 4);
+// $pasteleria->comprarClienteProducto(8, 4);
 echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(7, 34);
+// $pasteleria->comprarClienteProducto(7, 34);
 echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(2, 6);
+// $pasteleria->comprarClienteProducto(2, 6);
 echo "<br><br>-----------------------------------------<br><br>";
 
 
@@ -78,7 +82,7 @@ $cliente1->comprar([$tarta1,$bollo1,$chocolate3,$tarta1]);
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente2->comprar([$tarta2,$bollo3,$chocolate1]);
 echo "<br><br>-----------------------------------------<br><br>";
-// $cliente1->listaDeDulces();
+$cliente1->listarPedidos();
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
 echo "<br><br>-----------------------------------------<br><br>";

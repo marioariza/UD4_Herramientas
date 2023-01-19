@@ -49,10 +49,15 @@ class Pasteleria {
     }
  
     private function incluirProducto(Dulces $producto) {
-        $this->productos[$this->numProductos] = $producto;
-        echo "INCLUIDO PRODUCTO " . $this->numProductos+1 . 
-        '<br>****************************<br><b>Nombre = </b>' . $producto->getNombre();
-        $this->numProductos++;
+        if (in_array($producto, $this->productos)) {
+            echo "Este producto no se puede incluir porque ya existe.";
+        } else {
+            $this->productos[$this->numProductos] = $producto;
+            echo "INCLUIDO PRODUCTO " . $this->numProductos+1 . 
+            '<br>****************************<br><b>Nombre = </b>' . $producto->getNombre();
+            $this->numProductos++;
+        }
+
     }
 
     public function incluirTarta($nombre, $numero, $precio, $numPisos, $rellenos, $minC, $maxC) {
@@ -72,10 +77,16 @@ class Pasteleria {
 
     public function incluirCliente($nombre, $numero) {
         $cliente = new Cliente($nombre, $numero);
-        $this->clientes[$this->numClientes] = $cliente;
-        echo "INCLUIDO CLIENTE " . $this->numClientes+1 . 
-        '<br>****************************<br><b>Nombre = </b>' . $cliente->getNombre();
-        $this->numClientes++;
+        
+        if (in_array($cliente, $this->clientes)) {
+            echo "Este cliente no se puede incluir porque ya existe.";
+        } else {
+            $this->clientes[$this->numClientes] = $cliente;
+            echo "INCLUIDO CLIENTE " . $this->numClientes+1 . 
+            '<br>****************************<br><b>Nombre = </b>' . $cliente->getNombre();
+            $this->numClientes++;
+        }
+    
     }
 
     public function listarProductos() {

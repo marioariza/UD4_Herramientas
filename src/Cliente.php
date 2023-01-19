@@ -89,6 +89,10 @@ class Cliente {
 
     public function listarPedidos() {
 
+        echo "El cliente de nombre " .$this->nombre. " ha realizado " .$this->numPedidosEfectuados. " pedidos.<br><br>";
+        foreach ($this->dulcesComprados as $dulc) {
+            echo '<br><b>Dulce comprado = </b>'.$dulc->getNombre();
+        }
     }
 
     public function muestraResumen() {
