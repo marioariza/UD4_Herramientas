@@ -55,11 +55,16 @@ class Cliente {
         for ($i = 0; $i < count($d); $i++) {
             if ($this->listaDeDulces($d[$i]) == false) {
                 $this->numDulcesComprados++;
-                echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados . "<br><br>";
+                echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados. "<br><br>";
                 array_push($this->dulcesComprados, $d[$i]);
             } else if ($this->listaDeDulces($d[$i])) {
-                echo "El dulce no se puede comprar ya que ha superado el máximo de dulces para un pedido. Número de dulces comprados: " . $this->numDulcesComprados;
+                echo "El dulce no se puede comprar ya que ya ha sido comprado anteriormente.<br><br>";
             }
+        }
+
+        if ($this->numDulcesComprados >= 1) {
+            $this->numPedidosEfectuados++;
+            echo "PEDIDO REALIZADO CON ÉXITO. Número de pedidos realizados: " . $this->getNumPedidosEfectuados();
         }
     }
 
