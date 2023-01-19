@@ -57,6 +57,16 @@ $pasteleria->incluirCliente("Guillermo", 8);
 echo "<br><br>-----------------------------------------<br><br>";
 // Listamos los clientes.
 $pasteleria->listarClientes();
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->comprarClienteProducto(7, 12);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->comprarClienteProducto(8, 4);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->comprarClienteProducto(7, 34);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->comprarClienteProducto(2, 6);
+echo "<br><br>-----------------------------------------<br><br>";
+
 
 
 echo "<br><br>";
@@ -68,7 +78,7 @@ $cliente1->comprar([$tarta1,$bollo1,$chocolate3,$tarta1]);
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente2->comprar([$tarta2,$bollo3,$chocolate1]);
 echo "<br><br>-----------------------------------------<br><br>";
-// $cliente1->comprar([$tarta1,$bollo1,$chocolate3]);
+// $cliente1->listaDeDulces();
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
 echo "<br><br>-----------------------------------------<br><br>";
