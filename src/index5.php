@@ -69,20 +69,7 @@ echo "<br><br>-----------------------------------------<br><br>";
 // $pasteleria->comprarClienteProducto(7, 34);
 echo "<br><br>-----------------------------------------<br><br>";
 // $pasteleria->comprarClienteProducto(2, 6);
-echo "<br><
-
-
-
-
-
-
-
-
-
-
-
-
-br>-----------------------------------------<br><br>";
+echo "<br><br>-----------------------------------------<br><br>";
 
 
 
@@ -102,10 +89,5 @@ echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta2, "Tarta buena pero las hay mejores");
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->muestraResumen();
-
-
-// echo "<br><br>-----------------------------------------<br><br>";
-// // Listamos los clientes.
-// $pasteleria->listarClientes();
 
 ?>
