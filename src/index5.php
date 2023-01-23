@@ -70,6 +70,8 @@ echo "<br><br>-----------------------------------------<br><br>";
 echo "<br><br>-----------------------------------------<br><br>";
 // $pasteleria->comprarClienteProducto(2, 6);
 echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->muestraResumen();
+echo "<br><br>-----------------------------------------<br><br>";
 
 
 

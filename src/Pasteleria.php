@@ -126,15 +126,16 @@ class Pasteleria {
     public function muestraResumen()
     {
         echo '<b>Resumen pastelería:</b><br>********************<br>' . '<b>Nombre = </b>' . $this->nombre .
-            '<br><b>Número de productos que hay en la pastelería = </b>' . $this->numProductos;
-        for ($i = 0; $i < $this->numProductos; $i++) {
-            echo "<br>Productos de la pastelería:";
-            $this->getProductos()[$i]->muestraResumen();
+            '<br><b>Número de productos que hay en la pastelería = </b>' . $this->numProductos .
+            '<br><b>Número de clientes que hay en la pastelería = </b>' . $this->numClientes .
+            '<br><br><b>Productos de la pastelería:</b><br>-----------------------<br>';
+            for ($i = 0; $i < $this->numProductos; $i++) {
+            echo '<br><br>' . $this->getProductos()[$i]->muestraResumen();
         }
-        '<br><b>Número de clientes que hay en la pastelería = </b>' . $this->numClientes;
-        for ($i = 0; $i < $this->numProductos; $i++) {
-            echo "<br>Clientes de la pastelería:";
-            $this->getClientes()[$i]->muestraResumen();
+        '<br><b>Número de clientes que hay en la pastelería = </b>' . $this->numClientes .
+        '<br><br>Productos de la pastelería:<br>-----------------------<br>';
+        for ($i = 0; $i < $this->numClientes; $i++) {
+            echo '<br><br>' . $this->getClientes()[$i]->muestraResumen();
         }
     }
 }
