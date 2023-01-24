@@ -3,7 +3,9 @@
 /* Al hacer las clases abstractas conseguimos que no se instancien y sólo puedan ser heredadas, trasladando así 
 un funcionamiento obligatorio a clases hijas. Mejoran la calidad del código y ayudan a reducir la cantidad de código duplicado. */
 
-abstract class Dulces {
+include_once 'Resumible.php'; // No hace falta que las demás clases implemente el interfaz ya que lo implenta la clase Padre.
+
+abstract class Dulces implements Resumible{
     public string $nombre;
     protected int $numero;
     private float $precio;
