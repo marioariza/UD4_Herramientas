@@ -23,6 +23,21 @@ $chocolate1 = new Chocolate("Palmera de chocolate", 3, 1.8, 70, 165);
 $chocolate2 = new Chocolate("Chocolate negro", 4, 2.3, 85, 100);
 $chocolate3 = new Chocolate("Kinder Schoko-Bons", 6, 3.5, 16.5, 46);
 
+echo "<h2>PRUEBA CLIENTE</h2>";
+$cliente1->comprar([$tarta1,$bollo1,$chocolate3]);
+echo "<br><br>-----------------------------------------<br><br>";
+$cliente2->comprar([$tarta2,$bollo3,$chocolate1]);
+echo "<br><br>-----------------------------------------<br><br>";
+$cliente1->listarPedidos();
+echo "<br><br>-----------------------------------------<br><br>";
+$cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
+echo "<br><br>-----------------------------------------<br><br>";
+$cliente1->muestraResumen();
+
+
+
+echo "<br><br>";
+
 
 
 echo "<h2>PRUEBA PASTELERÍA</h2>";
@@ -67,31 +82,7 @@ echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->comprarClienteProducto(8, 4);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->comprarClienteProducto(7, 50);
-echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(2, 6);
-echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->comprarClienteProducto(13, 6);
-echo "<br><br>-----------------------------------------<br><br>";
-$pasteleria->muestraResumen();
-echo "<br><br>-----------------------------------------<br><br>";
 
-
-
-echo "<br><br>";
-
-
-
-echo "<h2>PRUEBA CLIENTE</h2>";
-$cliente1->comprar([$tarta1,$bollo1,$chocolate3,$tarta1]);
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente2->comprar([$tarta2,$bollo3,$chocolate1]);
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->listarPedidos();
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->valorar($tarta2, "Tarta buena pero las hay mejores");
-echo "<br><br>-----------------------------------------<br><br>";
-$cliente1->muestraResumen();
+// Aquí debe dar error ya que el cliente número 7 si existe, pero el dulce 50 no.
 
 ?>

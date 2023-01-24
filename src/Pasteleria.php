@@ -1,8 +1,8 @@
 <?php
 
 include_once '../util/ClienteNoEncontradoException.php';
-include_once '../util/DulceNoEncontradoException.php.php';
-include_once '../util/DulceNoCompradoException.php.php';
+include_once '../util/DulceNoEncontradoException.php';
+include_once '../util/DulceNoCompradoException.php';
 include_once '../util/PasteleriaException.php';
 
 class Pasteleria {

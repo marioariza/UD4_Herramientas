@@ -57,13 +57,14 @@ class Cliente {
                 $this->numDulcesComprados++;
                 echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados. "<br><br>";
                 array_push($this->dulcesComprados, $d[$i]);
-                if ($this->numDulcesComprados >= 1) {
-                    $this->numPedidosEfectuados++;
-                    echo "PEDIDO REALIZADO CON ÉXITO. Número de pedidos realizados: " . $this->getNumPedidosEfectuados();
-                }
             } else if ($this->listaDeDulces($d[$i])) {
                 throw new DulceNoComprado();
             }
+        }
+
+        if ($this->numDulcesComprados >= 1) {
+            $this->numPedidosEfectuados++;
+            echo "PEDIDO REALIZADO CON ÉXITO. Número de pedidos realizados: " . $this->getNumPedidosEfectuados();
         }
     }
 
