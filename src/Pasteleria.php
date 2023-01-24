@@ -1,9 +1,15 @@
 <?php
 
+use Monolog\Logger;
+use util\LogFactory;
+
 include_once '../util/ClienteNoEncontradoException.php';
 include_once '../util/DulceNoEncontradoException.php';
 include_once '../util/DulceNoCompradoException.php';
 include_once '../util/PasteleriaException.php';
+include_once '../pruebaLog.php';
+include_once '../util/LogFactory.php';
+
 
 class Pasteleria {
     public string $nombre;
@@ -11,10 +17,12 @@ class Pasteleria {
     private int $numProductos = 0;
     private array $clientes = [];
     private int $numClientes = 0;
+    private Logger $log;
 
     public function __construct($nombre)
     {
         $this->nombre = $nombre;
+        $this->log = LogFactory::getLogger();
     }
 
     public function getNombre()
@@ -130,6 +138,7 @@ class Pasteleria {
         }
 
         if ($clienteC == null) {
+            $this->log->error("Este cliente no existe así que no podrá comprar.");
             throw new ClienteNoEncontrado("Este cliente no existe así que no podrá comprar.");
         } else {
             foreach ($this->productos as $producto) {
@@ -139,6 +148,7 @@ class Pasteleria {
             }
 
             if ($productoC == null) {
+                $this->log->error("Este producto no existe así que no podrá ser comprado.");
                 throw new DulceNoEncontrado("Este producto no existe así que no podrá ser comprado.");
             } else {
                 $clienteC->comprar([$productoC]);

@@ -6,7 +6,7 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 $log = new Logger('MiLogger');
-$log->pushHandler(new StreamHandler('logs/milog.log', Logger::DEBUG));
+$log->pushHandler(new StreamHandler('src/logs/miLog.log', Logger::DEBUG));
 
 $log->debug("Esto es un mensaje de DEBUG");
 $log->info("Esto es un mensaje de INFO");
