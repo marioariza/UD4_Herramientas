@@ -34,6 +34,8 @@ $cliente1->listarPedidos();
 echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->valorar($tarta1, "La mejor tarta del mundo :)");
 echo "<br><br>-----------------------------------------<br><br>";
+$cliente2->valorar($tarta1, "La mejor tarta del mundo :)");
+echo "<br><br>-----------------------------------------<br><br>";
 $cliente1->muestraResumen();
 
 

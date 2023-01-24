@@ -63,6 +63,7 @@ class Pasteleria {
  
     private function incluirProducto(Dulces $producto) {
         if (in_array($producto, $this->productos)) {
+            $this->log->error("Este producto no se puede incluir porque ya existe.");
             echo "Este producto no se puede incluir porque ya existe.";
         } else {
             $this->productos[$this->numProductos] = $producto;
@@ -92,6 +93,7 @@ class Pasteleria {
         $cliente = new Cliente($nombre, $numero);
         
         if (in_array($cliente, $this->clientes)) {
+            $this->log->error("Este cliente no se puede incluir porque ya existe.");
             echo "Este cliente no se puede incluir porque ya existe.";
         } else {
             $this->clientes[$this->numClientes] = $cliente;

@@ -9,12 +9,14 @@ class Cliente {
     private array $dulcesComprados = [];
     private int $numDulcesComprados = 0;
     private int $numPedidosEfectuados;
+    private Logger $log;
 
     public function __construct($nombre, $numero, $numPedidosEfectuados = 0)
     {
         $this->nombre = $nombre;
         $this->numero = $numero;
         $this->numPedidosEfectuados = $numPedidosEfectuados;
+        $this->log = LogFactory::getLogger();
     }
 
     public function getNombre()
@@ -58,9 +60,11 @@ class Cliente {
         for ($i = 0; $i < count($d); $i++) {
             if ($this->listaDeDulces($d[$i]) == false) {
                 $this->numDulcesComprados++;
+                $this->log->info("Dulce " . $d[$i]->getNombre() . " comprado con éxito.");
                 echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados. "<br><br>";
                 array_push($this->dulcesComprados, $d[$i]);
             } else if ($this->listaDeDulces($d[$i])) {
+                $this->log->info("Este dulce no se puede comprar ya que ha sido comprado anteriormente.");
                 throw new DulceNoComprado("Este dulce no se puede comprar ya que ha sido comprado anteriormente.");
             }
         }
@@ -77,6 +81,7 @@ class Cliente {
             <br><br>
             <b>Valoración: </b>" . $c;
         } else {
+            $this->log->error("No puedes realizar la valoración de un dulce que no ha sido comprado.");
             echo "No puedes realizar la valoración de un dulce que no ha sido comprado.";
         }
     }
