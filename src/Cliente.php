@@ -1,5 +1,8 @@
 <?php
 
+use Monolog\Logger;
+use util\LogFactory;
+
 class Cliente {
     public string $nombre;
     private int $numero;
