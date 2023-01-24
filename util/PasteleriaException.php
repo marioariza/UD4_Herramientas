@@ -1,19 +1,13 @@
 <?php 
 
 class PasteleriaException extends Exception{
-
-    function ClienteNoEncontrado () {
-        echo "Este cliente no puede comprar ya que no existe.";
+    function __construct(String $message = "", int $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
     }
 
-    function DulceNoEncontrado () {
-        echo "Este producto no se puede comprar ya que no existe.";
+    public function getExceptionMessage(){
+        return $this->message;
     }
-
-    function DulceNoComprado () {
-        echo "El dulce no se puede comprar ya que ya ha sido comprado anteriormente.";
-    }
-
 }
 
 ?>

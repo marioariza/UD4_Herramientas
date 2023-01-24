@@ -1,9 +1,11 @@
 <?php
 
-include "Bollo.php";
+include "Dulces.php";
 
-$bollo1 = new Bollo("Cuña de chocolate", 15, 1.5, "Crema");
+// $dulce1 = new Dulces("Donut", 22, 2);
 
-$bollo1->muestraResumen();
+$dulce1->muestraResumen();
+
+// Ya no podemos instanciar Dulces ya que es una clase abstracta.
 
 ?>

@@ -4,9 +4,12 @@ include_once 'PasteleriaException.php';
 
 class DulceNoComprado extends PasteleriaException {
 
-    function DulNoComp () {
-        $ve = new PasteleriaException();
-        $ve->DulceNoComprado();
+    function __construct(String $message = "", int $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+
+    public function getExceptionMessage(){
+        return $this->message;
     }
 }
 
