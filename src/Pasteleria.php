@@ -37,7 +37,7 @@ class Pasteleria {
     /**
      * Sumario de setNombre
      * @param string $nombre
-     * @return $this
+     * @return Pasteleria
      */
     public function setNombre($nombre)
     {
@@ -58,7 +58,7 @@ class Pasteleria {
     /**
      * Sumario de setProductos
      * @param array $productos
-     * @return $this
+     * @return Pasteleria
      */
     public function setProductos($productos)
     {
@@ -79,7 +79,7 @@ class Pasteleria {
     /**
      * Sumario de setClientes
      * @param array $clientes
-     * @return $this
+     * @return Pasteleria
      */
     public function setClientes($clientes)
     {
