@@ -62,7 +62,7 @@ class Cliente {
                     echo "PEDIDO REALIZADO CON ÉXITO. Número de pedidos realizados: " . $this->getNumPedidosEfectuados();
                 }
             } else if ($this->listaDeDulces($d[$i])) {
-                echo "El dulce no se puede comprar ya que ya ha sido comprado anteriormente.";
+                throw new DulceNoComprado();
             }
         }
     }

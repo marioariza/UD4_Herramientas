@@ -1,5 +1,10 @@
 <?php
 
+include_once '../util/ClienteNoEncontradoException.php';
+include_once '../util/DulceNoEncontradoException.php.php';
+include_once '../util/DulceNoCompradoException.php.php';
+include_once '../util/PasteleriaException.php';
+
 class Pasteleria {
     public string $nombre;
     private array $productos = [];
@@ -125,7 +130,7 @@ class Pasteleria {
         }
 
         if ($clienteC == null) {
-            echo "Este cliente no puede comprar ya que no existe.";
+            throw new ClienteNoEncontrado();
         } else {
             foreach ($this->productos as $producto) {
                 if($producto->getNumero() == $numeroProducto){
@@ -134,7 +139,7 @@ class Pasteleria {
             }
 
             if ($productoC == null) {
-                echo "Este producto no se puede comprar ya que no existe.";
+                throw new DulceNoEncontrado();
             } else {
                 $clienteC->comprar([$productoC]);
             }
