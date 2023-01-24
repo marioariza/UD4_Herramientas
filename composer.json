@@ -1,4 +1,5 @@
 {
+    "autoload": { "psr-4": {"src\\": "src/"}},
     "name": "dwes/log",
     "description": "Pruebas con Monolog",
     "type": "project",
