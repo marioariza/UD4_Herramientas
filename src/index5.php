@@ -62,13 +62,15 @@ echo "<br><br>-----------------------------------------<br><br>";
 // Listamos los clientes.
 $pasteleria->listarClientes();
 echo "<br><br>-----------------------------------------<br><br>";
-// $pasteleria->comprarClienteProducto(7, 12);
+$pasteleria->comprarClienteProducto(7, 12);
 echo "<br><br>-----------------------------------------<br><br>";
-// $pasteleria->comprarClienteProducto(8, 4);
+$pasteleria->comprarClienteProducto(8, 4);
 echo "<br><br>-----------------------------------------<br><br>";
-// $pasteleria->comprarClienteProducto(7, 34);
+$pasteleria->comprarClienteProducto(7, 50);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->comprarClienteProducto(2, 6);
+echo "<br><br>-----------------------------------------<br><br>";
+$pasteleria->comprarClienteProducto(13, 6);
 echo "<br><br>-----------------------------------------<br><br>";
 $pasteleria->muestraResumen();
 echo "<br><br>-----------------------------------------<br><br>";

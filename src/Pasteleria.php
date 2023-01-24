@@ -114,25 +114,19 @@ class Pasteleria {
     }
 
     public function comprarClienteProducto($numeroCliente, $numeroProducto) {
-        if (!in_array($numeroCliente, $this->getClientes()->getNumero())) {
-            echo "Este cliente no puede comprar ya que no existe.";
-        } else if (!in_array($this->getProductos(),$numeroProducto)) { 
-            echo "Este producto no se puede comprar ya que no existe.";
-        // }else{ 
-            // $this->getClientes()[$numeroCliente]->comprar($this->getProductos()[$numeroProducto]); 
-        } else {
-            foreach ($this->clientes as $cliente) {
-                if($cliente->numero == $numeroCliente) {
-                    $cliente->numPedidosEfectuados++;
-                }
-                foreach ($this->productos as $producto) {
-                    if($producto->numero == $numeroProducto){
-                        array_push($cliente->dulcesComprados, $producto);
-                        echo "hola";
-                    }
-                }
-                break;
+        
+        foreach ($this->getClientes() as $cliente) {
+            if($cliente->numero != $numeroCliente) {
+                echo "Este cliente no puede comprar ya que no existe.";
             }
+            foreach ($this->getProductos() as $producto) {
+                if($producto->numero != $numeroProducto){
+                    echo "Este producto no se puede comprar ya que no existe.";
+                } else {
+                    $this->getClientes()[$numeroCliente]->comprar($this->getProductos()[$numeroProducto]); 
+                }
+            }
+            break;
         }
     }
 
