@@ -1,5 +1,7 @@
 <?php
 
+require "vendor/autoload.php"; 
+
 include "Pasteleria.php";
 include "Cliente.php";
 include "Dulces.php";

@@ -1,0 +1,15 @@
+{
+    "name": "dwes/log",
+    "description": "Pruebas con Monolog",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "2.1",
+        "phpunit/phpunit": "9.5"
+    },
+    "license": "LGPL-3.0-only",
+    "authors": [
+        {
+            "name": "Mario Rufo Ariza"
+        }
+    ]
+}
