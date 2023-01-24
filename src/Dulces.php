@@ -1,6 +1,9 @@
 <?php
 
-class Dulces {
+/* Al hacer las clases abstractas conseguimos que no se instancien y sólo puedan ser heredadas, trasladando así 
+un funcionamiento obligatorio a clases hijas. Mejoran la calidad del código y ayudan a reducir la cantidad de código duplicado. */
+
+abstract class Dulces {
     public string $nombre;
     protected int $numero;
     private float $precio;
