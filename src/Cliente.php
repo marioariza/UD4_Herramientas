@@ -58,7 +58,7 @@ class Cliente {
                 echo "Dulce comprado con éxito. (" . $d[$i]->getNombre() . "). Número de dulces comprados: " . $this->numDulcesComprados. "<br><br>";
                 array_push($this->dulcesComprados, $d[$i]);
             } else if ($this->listaDeDulces($d[$i])) {
-                throw new DulceNoComprado();
+                throw new DulceNoComprado("Este dulce no se puede comprar ya que ha sido comprado anteriormente.");
             }
         }
 

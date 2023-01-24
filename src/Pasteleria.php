@@ -130,7 +130,7 @@ class Pasteleria {
         }
 
         if ($clienteC == null) {
-            throw new ClienteNoEncontrado("CLIENTE NO ENCONTRADO");
+            throw new ClienteNoEncontrado("Este cliente no existe así que no podrá comprar.");
         } else {
             foreach ($this->productos as $producto) {
                 if($producto->getNumero() == $numeroProducto){
@@ -139,7 +139,7 @@ class Pasteleria {
             }
 
             if ($productoC == null) {
-                throw new DulceNoEncontrado("DULCE NO ENCONTRADO");
+                throw new DulceNoEncontrado("Este producto no existe así que no podrá ser comprado.");
             } else {
                 $clienteC->comprar([$productoC]);
             }
