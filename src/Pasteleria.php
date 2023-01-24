@@ -25,11 +25,20 @@ class Pasteleria {
         $this->log = LogFactory::getLogger();
     }
 
+    /**
+     * Sumario de getNombre
+     * @return string
+     */
     public function getNombre()
     {
         return $this->nombre;
     }
 
+    /**
+     * Sumario de setNombre
+     * @param string $nombre
+     * @return $this
+     */
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
@@ -37,11 +46,20 @@ class Pasteleria {
         return $this;
     }
 
+    /**
+     * Sumario de getProductos
+     * @return array
+     */
     public function getProductos()
     {
         return $this->productos;
     }
 
+    /**
+     * Sumario de setProductos
+     * @param array $productos
+     * @return $this
+     */
     public function setProductos($productos)
     {
         $this->productos = $productos;
@@ -49,11 +67,20 @@ class Pasteleria {
         return $this;
     }
 
+    /**
+     * Sumario de getClientes
+     * @return array
+     */
     public function getClientes()
     {
         return $this->clientes;
     }
 
+    /**
+     * Sumario de setClientes
+     * @param array $clientes
+     * @return $this
+     */
     public function setClientes($clientes)
     {
         $this->clientes = $clientes;
@@ -61,6 +88,12 @@ class Pasteleria {
         return $this;
     }
  
+    /**
+     * Sumario de incluirProducto
+     * Incluye los dulces al array de productos de la pastelería
+     * @param Dulces $producto
+     * @return void
+     */
     private function incluirProducto(Dulces $producto) {
         if (in_array($producto, $this->productos)) {
             $this->log->error("Este producto no se puede incluir porque ya existe.");
@@ -74,21 +107,56 @@ class Pasteleria {
 
     }
 
+    /**
+     * Sumario de incluirTarta
+     * Creamos la tarta y la mandamos a incluirProducto()
+     * @param string $nombre
+     * @param float $precio
+     * @param int $numPisos
+     * @param int $minC
+     * @param int $maxC
+     * @param array $rellenos
+     * @return void
+     */
     public function incluirTarta($nombre, $numero, $precio, $numPisos, $rellenos, $minC, $maxC) {
         $tarta = new Tarta($nombre, $numero, $precio, $numPisos, $rellenos, $minC, $maxC);
         $this->incluirProducto($tarta);
     }
 
+    /**
+     * Sumario de incluirBollo
+     * Creamos la tarta y la mandamos a incluirProducto()
+     * @param string $nombre
+     * @param float $precio
+     * @param string $relleno
+     * @return void
+     */
     public function incluirBollo($nombre, $numero, $precio, $rellenos) {
         $bollo = new Bollo($nombre, $numero, $precio, $rellenos);
         $this->incluirProducto($bollo);
     }
 
+    /**
+     * Sumario de incluirChocolate
+     * Creamos el chocolate y la mandamos a incluirProducto()
+     * @param string $nombre
+     * @param float $precio
+     * @param float $porcentajeCacao
+     * @param float $peso
+     * @return void
+     */
     public function incluirChocolate($nombre, $numero, $precio, $porcentajeCacao, $peso) {
         $chocolate = new Chocolate($nombre, $numero, $precio, $porcentajeCacao, $peso);
         $this->incluirProducto($chocolate);
     }
 
+    /**
+     * Sumario de incluirCliente
+     * Crea un cliente y lo incluye en la pastelería
+     * @param string $nombre
+     * @param int $numero
+     * @return void
+     */
     public function incluirCliente($nombre, $numero) {
         $cliente = new Cliente($nombre, $numero);
         
@@ -104,6 +172,11 @@ class Pasteleria {
     
     }
 
+    /**
+     * Sumario de listarProductos
+     * Devuelve y muestra todos los productos que tenemos en la pastelería, si no tenemos ninguno también lo dirá.
+     * @return void
+     */
     public function listarProductos() {
         echo "<p>Listado de los " . $this->numProductos . " productos disponibles:"; 
         if ($this->numProductos == 0) {
@@ -116,6 +189,11 @@ class Pasteleria {
         }
     }
 
+    /**
+     * Sumario de listarClientes
+     * Devuelve y muestra todos los clientes que tenemos en la pastelería, si no tenemos ninguno también lo dirá.
+     * @return void
+     */
     public function listarClientes() {
         echo "<p>Listado de los ".$this->numClientes." socios del videoclub:"; 
         if ($this->numClientes == 0) {
@@ -128,6 +206,17 @@ class Pasteleria {
         }
     }
 
+    /**
+     * Sumario de comprarClienteProducto
+     * Recibimos el número del cliente y el número del producto.
+     * Si los dos se encuentran en la pastelería iremos al método comprar de la clase Cliente.
+     * Si alguno de los dos no se encuentra en la pastelería lo mostraremos mediante una excepción.
+     * @param int $numeroCliente
+     * @param int $numeroDulce
+     * @throws ClienteNoEncontrado
+     * @throws DulceNoEncontrado
+     * @return void
+     */
     public function comprarClienteProducto($numeroCliente, $numeroProducto) {
 
         $clienteC = null;
@@ -159,6 +248,13 @@ class Pasteleria {
 
     }
 
+    /**
+     * Sumario de muestraResumen
+     * Mostramos el resumen de la pastelería mostrando el nombre de la misma y también un resumen
+     * de los productos y los clientes que se encuentran en ella. De los clientes y productos también
+     * mostrará el número en total que hay en cada uno de ellos.
+     * @return void
+     */
     public function muestraResumen()
     {
         echo '<b>Resumen pastelería:</b><br>********************<br>' . '<b>Nombre = </b>' . $this->nombre .
